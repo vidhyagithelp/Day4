@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <p id="para"></p> -->
+
+    <script>
+      // let text = document.getElementById("btn").innerText;
+      // console.log(text);
+      //  printing all panlidromes in  array using anonymous function
+      let palindrome = function () {
+        let arr = ["car", 123, "madam", "vanmm", "racecar", 18281, 34643];
+        let res = "";
+
+        let dummy = [];
+
+        for (let i = 0; i < arr.length; i++) {
+          res = "";
+          arr[i] = arr[i].toString();
+          if (arr[i].length % 2 == 1) {
+            for (
+              let j = 0, k = arr[i].length - 1;
+              j < arr[i].length;
+              j++, k--
+            ) {
+              if (arr[i][j] === arr[i][k]) {
+                res += arr[i][j];
+              } else {
+                break;
+              }
+            }
+          }
+
+          if (res) {
+            dummy.push(res);
+          }
+        }
+        return dummy;
+      };
+
+      console.log(palindrome());
+
+      //IIFE
+      (function () {
+        let arr = ["car", 123, "madam", "vanmm", "racecar", 18281, 34643];
+        let res = "";
+
+        let dummy = [];
+
+        for (let i = 0; i < arr.length; i++) {
+          res = "";
+          arr[i] = arr[i].toString();
+          if (arr[i].length % 2 == 1) {
+            for (
+              let j = 0, k = arr[i].length - 1;
+              j < arr[i].length;
+              j++, k--
+            ) {
+              if (arr[i][j] === arr[i][k]) {
+                res += arr[i][j];
+              } else {
+                break;
+              }
+            }
+          }
+
+          if (res) {
+            dummy.push(res);
+          }
+        }
+        console.log(dummy);
+      })();
+      // document.getElementById("showVal").innerText="hello";
+
+      // document.getElementById("para").innerHTML =
+      //   "Returned Palindrome Array is----" + palindrome();
+    </script>
+  </body>
+</html>

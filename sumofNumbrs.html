@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=\, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // Sum of all numbers in an array
+      let sumofArr = function () {
+        let res=0;
+        let numArr = [2, 2, 2, 2];
+        let i = 0;
+        while (i < numArr.length) {
+          res+=numArr[i];
+          
+          i++;
+        }
+        console.log("SumResult==",res);
+      };
+
+      sumofArr();
+
+      //IIFE
+      (function () {
+        let res=0;
+        let numArr = [2, 2, 2, 10];
+        let i = 0;
+        while (i < numArr.length) {
+          res+=numArr[i];
+          
+          i++;
+        }
+        console.log("SumResult==",res);
+      })();
+    </script>
+  </head>
+  <body>
+    <!-- <button onclick="sumofArr()">sum of values</button> -->
+  </body>
+</html>

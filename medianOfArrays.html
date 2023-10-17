@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <button onclick="medianOfArrays()">GetMedian</button> -->
+    <script>
+      let arr1 = [20,23,32,34,45,90];
+      let arr2 = [1,2,3,7,8,89];
+      //merged two arrays
+      let mergedArr = arr1.concat(arr2);
+      // console.log(mergedArr);
+      //bubble sort
+      let bubbleSort = function(inputArr)  {
+        let len = inputArr.length;
+        // console.log(inputArr);
+        let checked;
+     
+        do {
+            checked = false;
+            for (let i = 0; i < len; i++) {
+                if (inputArr[i] > inputArr[i + 1]) {
+                    let tmp = inputArr[i];
+                    inputArr[i] = inputArr[i + 1];
+                    inputArr[i + 1] = tmp;
+                    checked = true;
+                }
+            }
+        }
+        while (checked);
+
+        return inputArr;
+      };
+      //finding median
+      let medianOfArrays = function () {
+        let median;
+        let medianArr;
+        let res = 0;
+         if(arr1.length===arr2.length){
+        let sorted = bubbleSort(mergedArr);
+        let arrLength = sorted.length;
+
+         //arr length is even
+        if (arrLength % 2 == 0) {
+          medianArr = sorted.slice(
+            Math.floor((arrLength - 1) / 2),
+            Math.floor((arrLength - 1) / 2) + 2
+          );
+          for (let val of medianArr) {
+            res += val;
+           
+          }
+            median = Math.floor(res / 2);
+            return median;
+        }
+         //arr length is even
+        else {
+          console.log(sorted);
+          medianArr = sorted.slice(arrLength / 2, arrLength / 2 + 1);
+          median = medianArr[0];
+           return median;
+        }
+      };
+      }
+      console.log(medianOfArrays());
+
+      //IIFE
+    //   (function () {
+    //     let median;
+    //     let medianArr;
+    //     let res = 0;
+    //     console.log(mergedArr);
+    //     if(arr1.length===arr2.length){
+    //     let sorted = bubbleSort(mergedArr);
+    //     console.log(sorted);
+    //     let arrLength = sorted.length;
+
+    //     //arr length is even
+    //     if (arrLength % 2 == 0) {
+    //       medianArr = sorted.slice(
+    //         Math.floor((arrLength - 1) / 2),
+    //         Math.floor((arrLength - 1) / 2) + 2
+    //       );
+    //       for (let val of medianArr) {
+    //         res += val;
+           
+    //       }
+    //       median = Math.floor(res / 2);
+    //         console.log(median);
+    //     }
+    //     //arr length is even
+    //     else {
+    //       console.log(sorted);
+    //       medianArr = sorted.slice(arrLength / 2, arrLength / 2 + 1);
+    //       median = medianArr[0];
+    //       console.log(median);
+    //     }
+    //   }
+    // })();
+    </script>
+  </body>
+</html>

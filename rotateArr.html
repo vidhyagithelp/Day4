@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        // Rotating the array for "k" times using anonymous function
+        let arr=["a","b","c","d","e"];
+        let temp;
+        let rotateArr=function(rotateNumbr){
+       
+        //splice alters the original array.
+        temp=arr.splice(0,rotateNumbr);
+        // console.log(temp);
+        // console.log(arr);
+        arr.push(...temp);
+        // console.log(arr.length);
+        // console.log(arr);
+        return arr;
+
+        } 
+
+        console.log(rotateArr(2));
+
+        //IIFE
+        (function(rotateNumbr){
+       
+       //splice alters the original array.
+       temp=arr.splice(0,rotateNumbr);
+       // console.log(temp);
+       // console.log(arr);
+       arr.push(...temp);
+       // console.log(arr.length);
+       // console.log(arr);
+       console.log(arr);
+
+       } )(2);
+
+        
+    </script>
+</body>
+</html>

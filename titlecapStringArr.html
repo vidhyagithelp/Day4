@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //Convert all the strings to title caps in a string array using Ananymous function
+     let printStringWithCaptl=function() {
+        let strArr=["teju","moni","kamal","raju","poonam"];
+        let finalArr=[];
+        for(let i=0;i<strArr.length;i++){
+            let titlecase=strArr[i][0].toUpperCase()+strArr[i].substring(1);
+            finalArr.push(titlecase);
+        }
+        console.log(finalArr);
+
+     }
+    printStringWithCaptl();
+
+     //IIFE
+     (function() {
+        let strArr=["teju","moni","kamal","raju","poonam"];
+        let finalArr=[];
+        for(let i=0;i<strArr.length;i++){
+            let titlecase=strArr[i][0].toUpperCase()+strArr[i].substring(1);
+            finalArr.push(titlecase);
+        }
+        console.log(finalArr);
+
+     })();
+
+    </script>
+</head>
+<body>
+    <!-- <button onclick="printStringWithCaptl()">Into titleCap</button> -->
+</body>
+</html>

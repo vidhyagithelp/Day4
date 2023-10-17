@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //Return all the prime numbers in an array   n%2==1 && sqrt(n) divides odd
+      let generatePrimeNumArr = function (val) {
+        let givenNum = Number(val);
+        i = 2;
+        while (i <= givenNum) {
+          if (i % 2 == 1  || i == 2) {
+                if(i%3==0){
+                  // break;
+                }
+      
+               else{
+                console.log(i);
+               }
+            // console.log(i);
+          }
+          i++;
+        }
+
+        // return finalarr;
+      };
+
+      generatePrimeNumArr(137);
+
+      //IIFE
+      (function (val) {
+        let finalarr = [];
+        let givenNum = Number(val);
+        i = 2;
+        while (i <= givenNum) {
+          if (i % 2 == 1  || i == 2) {
+                if(i%3==0){
+                  // break;
+                }
+      
+               else{
+                console.log(i);
+               }
+            // console.log(i);
+          }
+          i++;
+        }
+
+        // return finalarr;
+      })(137);
+    </script>
+  </head>
+  <body>
+    <!-- <button onclick="generatePrimeNumArr(20)">Get PrimeNumber</button> -->
+  </body>
+</html>
